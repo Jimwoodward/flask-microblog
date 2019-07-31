@@ -1,9 +1,11 @@
 from flask import Flask
+from config import Config
 
 # __name__ is a predefined variable who's value is the module the variable is used in.
 # In this case, the module name is the folder name that this file exists in. So, the value of __name__ is 'app'
 
 app = Flask(__name__) # We create the flask object named app here
+app.config.from_object(Config)
 
 # There are two 'app' entities so far. 
 # We have the app package, which is a product of the __init__.py file and the subdir 'app'
