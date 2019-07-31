@@ -1,6 +1,6 @@
 
 ## Directory Strucutre
-```.
+.
 ├── Pipfile
 ├── Pipfile.lock
 ├── README.md
@@ -11,4 +11,4 @@
 │       ├── base.html
 │       └── index.html
 ├── dockerfile
-└── microblog.py```
+└── microblog.py
