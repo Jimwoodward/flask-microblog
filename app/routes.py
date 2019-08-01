@@ -28,3 +28,7 @@ def login():
       form.username.data, form.remember_me.data))
     return redirect(url_for('index'))
   return render_template('login.html', title='Login', form=form)
+
+@app.route('/unicorns')
+def unicorns():
+  return render_template('unicorns.html', title='Unicorns')
