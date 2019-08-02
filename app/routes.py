@@ -2,6 +2,7 @@ from flask import render_template, flash, redirect, url_for
 # From the app package we are importing the app flask object
 from app import app
 from app.forms import LoginForm
+from ron_swanson_quotes import get_quote
 
 # The syntax here is that the '@app.route' decoration creates an association between the url that's passed in as the parameter with the following function
 @app.route('/')
@@ -32,3 +33,9 @@ def login():
 @app.route('/unicorns')
 def unicorns():
   return render_template('unicorns.html', title='Unicorns')
+
+@app.route('/ron-swanson-quotes')
+def ron_swanson_quotes():
+  response = get_quote.get_ron_swanson_quote()
+  response_json = response.json()
+  return render_template('ron_swanson.html', quote=response_json[0], title='Ron Swanson')
